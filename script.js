@@ -7,10 +7,6 @@
     console.log(catPage);
 
 
-  // logIn.classList.toggle("page-splash");
-
-  // logIn.addEventListener("click", hideSplashScreen);
-
   let logHide = document.querySelector(".page-splash").hidden = false;
   console.log(logHide);
 
@@ -19,6 +15,8 @@
   } else {
     logIn.addEventListener("click", showSplashScreen);
   }
+
+
 
 
 function showSplashScreen(){
@@ -33,8 +31,17 @@ function hideSplashScreen(){
     catPage.classList.remove("no-scroll");
 }
 
-// catPage.addEventListener("click", showSplashScreen);
 
+let comment = document.querySelector(".comment");
+
+
+function createCommentElement(comment){
+  let elem = document.createElement('div');
+  elem.innerHTML = comment;
+  elem.style.fontStyle = 'italic';
+  document.getElementById('comment')[2].append(elem);
+
+}
 
 
 
