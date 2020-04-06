@@ -151,6 +151,9 @@ function createPostElement(post){
 }
 
 
+function addPost(postElement){
+    document.getElementById("posts-container").append(postElement);
+}
 
 
 
