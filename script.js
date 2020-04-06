@@ -33,10 +33,10 @@ function authorize(user) {
 }
 const user = new User(1, "Anna", "anna@gmail.com", false);
 authorize(user);
-const post = new Post(1, user.id, "https://image.shutterstock.com/image-photo/portrait-surprised-cat-scottish-straight-260nw-499196506.jpg",  "Lorem ipsum dolor sit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque libero minima corporis accusamus nobis velit.");
+const post = new Post(1, user.id, "images/angryCat.jpg",  "Lorem ipsum dolor sit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque libero minima corporis accusamus nobis velit.");
 const user2 = new User(2, "Alex","gena@gena.com", false);
 authorize(user2);
-const comment = new Comment(user2.name, post.id, "long text");
+const comment = new Comment(user2.name, post.id, "Kitty you are so cute! Don't be so angry)) with love<3");
 
 console.log(user);
 console.log(post);
@@ -83,9 +83,10 @@ for(let i = 0; i < posts.length; i++) {
   let logHide = document.querySelector(".page-splash").hidden = false;
   if(!logHide){
       logIn.addEventListener("click", hideSplashScreen);
-  } else {
-    logIn.addEventListener("click", showSplashScreen);
-  }
+  } 
+  // else {
+  //   logIn.addEventListener("click", showSplashScreen);
+  // }
 function showSplashScreen(){
   logIn.classList.add("page-slash").hidden = false;
   let body = document.querySelector("body");
@@ -97,8 +98,6 @@ function hideSplashScreen(){
     let body = document.querySelector("body");
     body.classList.remove("no-scroll");
 }
-
-
 
 function createCommentElement(comment){
     let elem= document.createElement('div')
@@ -154,6 +153,10 @@ function createPostElement(post){
 function addPost(postElement){
     document.getElementById("posts-container").append(postElement);
 }
+
+let postsCont = createPostElement(post);
+addPost(postsCont);
+document.getElementById('comments').append(createCommentElement(comment));
 
 
 
