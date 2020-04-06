@@ -87,11 +87,15 @@ for(let i = 0; i < posts.length; i++) {
   // else {
   //   logIn.addEventListener("click", showSplashScreen);
   // }
+
+  
 function showSplashScreen(){
   logIn.classList.add("page-slash").hidden = false;
   let body = document.querySelector("body");
   body.classList.add("no-scroll");
 }
+
+// showSplashScreen();
 
 function hideSplashScreen(){
     document.querySelector(".page-splash").hidden = true;
